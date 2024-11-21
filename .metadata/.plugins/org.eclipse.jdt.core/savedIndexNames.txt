@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+D:\TaiLieuHoc\Nam3\HocKy1\LapTrinhWeb\Project\.metadata\.plugins\org.eclipse.jdt.core
+2380175872.index
+902233236.index
+1507437129.index
+1865797976.index
+3412667571.index

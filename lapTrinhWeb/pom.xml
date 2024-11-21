@@ -15,6 +15,7 @@
 			<version>8.0.33</version>
 		</dependency>
 
+<<<<<<< HEAD
 		<!--
 		https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
 		<dependency>
@@ -72,6 +73,8 @@
 		</dependency>
 
 
+=======
+>>>>>>> 5d3cbdaa1e8fd69ae42b5139e021fdd6cd93b565
 	</dependencies>
 
 	<build>

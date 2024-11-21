@@ -113,4 +113,10 @@ public class UserModel implements Serializable{
 				+ ", createDate=" + createDate + "]";
 	}
 
+<<<<<<< HEAD
+=======
+	
+	
+
+>>>>>>> 5d3cbdaa1e8fd69ae42b5139e021fdd6cd93b565
 }

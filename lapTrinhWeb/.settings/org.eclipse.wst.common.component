@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
         
     <wb-module deploy-name="lapTrinhWeb-1.1.0">
                 
@@ -18,4 +19,15 @@
             
     </wb-module>
     
+=======
+    <wb-module deploy-name="lapTrinhWeb-1.1.0">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+        <property name="context-root" value="lapTrinhWeb"/>
+        <property name="java-output-path" value="/lapTrinhWeb/target/classes"/>
+    </wb-module>
+>>>>>>> 5d3cbdaa1e8fd69ae42b5139e021fdd6cd93b565
 </project-modules>
