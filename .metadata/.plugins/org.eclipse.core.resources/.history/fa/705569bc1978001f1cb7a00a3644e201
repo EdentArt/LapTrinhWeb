@@ -1,0 +1,5 @@
+package mn.iotstar.configs;
+
+public class DBConnectSQL {
+
+}

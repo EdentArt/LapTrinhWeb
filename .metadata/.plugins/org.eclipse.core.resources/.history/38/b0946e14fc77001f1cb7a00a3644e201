@@ -1,0 +1,5 @@
+package mn.iotstar.dao;
+
+public interface IUserDao {
+
+}

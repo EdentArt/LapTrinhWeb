@@ -1,0 +1,95 @@
+package mn.iotstar.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import mn.iotstar.configs.DBConnectMySQL;
+import mn.iotstar.dao.IUserDao;
+import mn.iotstar.models.UserModel;
+
+public class UserDaoImpl extends DBConnectMySQL implements IUserDao{
+
+	public Connection conn = null;
+	public PreparedStatement ps = null;
+	public ResultSet rs = null;
+	
+	@Override
+	public List<UserModel> findAll() {
+		String sql ="select * from users";
+		
+		List<UserModel> list = new ArrayList<>(); //Tạo 1 list để truyền dữ liệu
+		
+		try
+		{
+			conn = super.getDatabaseConnection(); //kết nối database
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while (rs.next() /*Next từng dòng tới cuối bảng*/ ) {
+				list.add(
+						new UserModel(
+								rs.getInt("id"), 
+								rs.getString("username"), 
+								rs.getString("password"), 
+								rs.getString("email"), 
+								rs.getString("fullname"), 
+								rs.getString("images"))); //Add vào
+			}
+			return list;
+		}
+		
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public UserModel findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insert(UserModel user) {
+		// TODO Auto-generated method stub
+		
+		String sql = "INSERT INTO users(id, username, email, password, images, fullname) VALUES (?, ?, ?, ?, ?, ?)";
+		
+		try {
+			conn = super.getDatabaseConnection(); //Ket noi database
+			ps = conn.prepareStatement(sql); //Nem cau sql vao cho thuc thi
+
+			ps.setInt(1, user.getId());
+			ps.setString(2, user.getUsername());
+			ps.setString(3, user.getEmail());
+			ps.setString(4, user.getPassword());
+			ps.setString(5, user.getImages());
+			ps.setString(6, user.getFullname());
+			
+			ps.executeUpdate();
+		}
+		
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		UserDaoImpl userDao = new UserDaoImpl();
+	
+		userDao.insert(new UserModel(4, "abc1", "abc1@gmail.com", "1234", "", "abcdegh"));
+		
+		List<UserModel> list = userDao.findAll();
+		for (UserModel user : list) {
+			System.out.println(user);
+		}
+	}
+
+}
